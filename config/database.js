@@ -6,7 +6,7 @@ module.exports = {
   port: 5432,
   dialect: 'postgres',
   protocol: 'postgres',
-  logging: true,
+  logging: false,
   dialectOptions: {
     ssl: true
   }
