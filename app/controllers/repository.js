@@ -6,7 +6,7 @@ exports.getRepositories = async (req, res, next) => {
     const params = {
         page,
         per_page,
-        languages: lang ? [lang] : ['java', 'javascript', 'python', 'php', 'ruby']
+        languages: lang ? [lang] : ['Java', 'Javascript', 'Jython', 'PHP', 'Ruby']
     }
 
     // Load repositories from Git Hub Async.
