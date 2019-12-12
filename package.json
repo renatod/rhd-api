@@ -1,0 +1,17 @@
+{
+  "name": "rhd-api",
+  "version": "1.0.0",
+  "description": "Api",
+  "main": "index.js",
+  "author": "Renato Dias",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.21.2",
+    "pg": "^7.14.0",
+    "pg-hstore": "^2.3.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^5.5.1"
+  }
+}
