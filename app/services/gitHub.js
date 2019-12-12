@@ -19,11 +19,16 @@ const importRepository = async (item) => {
         language: item.language,
         stargazers: item.stargazers_count,
         forks: item.forks_count,
-    }).toJSON();
+    });
 }
 
 exports.importFromGitHub = async ({ languages, page = 1, per_page = 10 }) => {
-    const { data } = await axios.get(`https://api.github.com/search/repositories?q=language:${languages.join('+')}&sort=stars&page=${page}&per_page=${per_page}`);
+    const langs = []
+    languages.forEach(d => {
+        langs.push(`language:${d}`)
+    })
+
+    const { data } = await axios.get(`https://api.github.com/search/repositories?q=${langs.join('+')}&page=${page}&per_page=${per_page}&sort=stars&order=desc`);
     const { items, total_count } = data;
     
     const repositories = []

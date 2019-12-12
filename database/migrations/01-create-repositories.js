@@ -16,7 +16,7 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       license: {
         allowNull: true,
