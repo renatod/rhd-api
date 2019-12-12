@@ -12,6 +12,9 @@ exports.findAll = async ({ languages, page = 1, per_page = 10 }) => {
                 [Sequelize.Op.in]: languages
             }
         },
+        order: [
+            ['stargazers', 'DESC']
+        ],
         limit: per_page,
         offset: (page - 1) * per_page
     })
