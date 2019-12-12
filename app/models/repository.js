@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     language: DataTypes.STRING,
     stargazers: DataTypes.INTEGER,
     forks: DataTypes.INTEGER,
-  });
+  })
 
-  return Repository;
+  return Repository
 }

@@ -1,9 +1,9 @@
-const express = require('express');
-const repositoryController = require('../controllers/repository');
+const express = require('express')
+const repositoryController = require('../controllers/repository')
 
-const router = express.Router();
+const router = express.Router()
 
-router.get('/', repositoryController.getRepositories);
-router.get('/:id', repositoryController.getRepository);
+router.get('/', repositoryController.getRepositories)
+router.get('/:id', repositoryController.getRepository)
 
-module.exports = router;
+module.exports = router
