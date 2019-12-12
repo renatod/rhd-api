@@ -9,8 +9,8 @@ exports.getRepositories = async (req, res, next) => {
         languages: lang ? [lang] : ['Java', 'Javascript', 'Jython', 'PHP', 'Ruby']
     }
 
-    // Load repositories from Git Hub Async.
-    GitHubService.loadFromGitHub(params)
+    // Load repositories from Git Hub.
+    await GitHubService.loadFromGitHub(params)
 
     const result = await RepositoryService.findAll(params)
 
