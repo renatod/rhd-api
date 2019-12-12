@@ -46,16 +46,9 @@ const importRepository = async (item) => {
 };
 
 exports.loadFromGitHub = async (params) => {
-    const { total, items } = await requestGitHub(params)
-    const models = []
+    const { items } = await requestGitHub(params)
 
     for (const item of items) {
-        const model = await importRepository(item)
-        models.push(model)
-    }
-
-    return {
-        count: total,
-        rows: models
+        await importRepository(item)
     }
 };
