@@ -2,10 +2,10 @@ const GitHubService = require('../services/gitHub');
 const { Repository } = require('../models');
 
 exports.getRepositories = async (req, res, next) => {
-    const { page, per_page } = req.query
+    const { page, per_page, lang } = req.query
 
     const { count, rows} = await GitHubService.importFromGitHub({
-        languages: ['java'],
+        languages: lang ? [lang] : ['java', 'javascript', 'python', 'php', 'ruby'],
         page,
         per_page
     })
