@@ -6,7 +6,15 @@ const requestGitHub = async ({ lang, page = 1, per_page = 10 }) => {
     let total = 0
     
     try {
-        const { data } = await axios.get(`https://api.github.com/search/repositories?q=language:${lang || ''}&page=${page}&per_page=${per_page}&sort=stars&order=desc`)
+        const { data } = await axios.get('https://api.github.com/search/repositories', {
+            params: {
+                q: `language:${lang || ''}`,
+                page: page,
+                per_page: per_page,
+                sort: 'stars',
+                order: 'desc'
+            }
+        })
         items = data.items
         total = data.total_count
     } catch (err) {
