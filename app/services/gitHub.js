@@ -32,7 +32,7 @@ const importRepository = async (item) => {
 
     return await Repository.create({
         fullName: item.full_name,
-        description: item.description,
+        description: item.description || '',
         license: license,
         language: item.language,
         stargazers: item.stargazers_count,
